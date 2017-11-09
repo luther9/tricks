@@ -1,5 +1,16 @@
 #!/usr/bin/python3
 
+"""
+Two mutually recursive generators.
+
+This is the equivalent Haskell code:
+
+odds = 1 : map (+ 1) evens
+evens = map (+ 1) odds
+
+The Python code is unfortunately longer than two lines.
+"""
+
 
 def odds():
     yield 1

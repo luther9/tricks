@@ -12,14 +12,11 @@ def evens():
         yield i + 1
 
 
-def test_gen(gen):
-    for _ in range(10):
-        print(next(gen))
-
-
 def main():
-    test_gen(odds())
-    test_gen(evens())
+    for gen in (odds(), evens()):
+        for _ in range(10):
+            print(next(gen))
 
 
-main()
+if __name__ == '__main__':
+    main()

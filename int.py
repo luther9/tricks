@@ -1,21 +1,6 @@
 #!/usr/bin/python3
 
-
-class Delegate:
-    """A data descriptor that delegates attribute access to a field in the
-    instance.
-    """
-
-    def __init__(self, field):
-        self.field = field
-
-    def __set_name__(self, _, name):
-        self.name = name
-
-    def __get__(self, instance, _):
-        if instance is None:
-            return self
-        return getattr(getattr(instance, self.field), self.name)
+from compdescriptors import Delegate
 
 
 class Int:
